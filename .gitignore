@@ -1,0 +1,17 @@
+.vs/*
+bin/*
+bin-int/*
+
+*.sln
+*.vcxproj
+
+*/*.vcxproj
+
+*.vcxproj.filters
+*.vcxproj.user
+
+*/*.vcxproj.filters
+*/*.vcxproj.user
+
+*.log
+*/*.log
