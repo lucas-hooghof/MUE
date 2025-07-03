@@ -1,7 +1,7 @@
 project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++20"
 	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
@@ -21,6 +21,11 @@ project "Sandbox"
 	links
 	{
 		"MUE"
+	}
+	
+	defines 
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	filter "system:windows"

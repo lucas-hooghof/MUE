@@ -11,4 +11,9 @@
 	#define STRICT
 	
 	#include <Windows.h>
+
+	#define MUE_BREAK() __debugbreak()
+#else
+	#error "MUE Only supports Windows"
 #endif
+

@@ -1,14 +1,14 @@
 project "MUE"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++20"
 	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "muepch.h"
-	pchsource "muepch.cpp"
+	pchsource "src/muepch.cpp"
 
 	files
 	{
@@ -25,6 +25,11 @@ project "MUE"
 	links
 	{
 		"opengl32.lib"
+	}
+	
+	defines 
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	filter "system:windows"
