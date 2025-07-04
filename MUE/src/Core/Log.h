@@ -84,8 +84,9 @@ namespace MUE
 #define MDEBUG_APP(msg,...) MUE::Logger::Log(MUE::LogLevel::DEBUG,"App",msg,##__VA_ARGS__) 
 #define MTRACE_APP(msg,...) MUE::Logger::Log(MUE::LogLevel::TRACE,"App",msg,##__VA_ARGS__) 
 #else
-#define MWARN_CORE(msg,...) 
-#define MINFO_CORE(msg,...) 
+#define MDEBUG_CORE(msg,...) 
+#define MTRACE_CORE(msg,...)
+
 #define MDEBUG_APP(msg,...)  
 #define MTRACE_APP(msg,...)  
 #endif

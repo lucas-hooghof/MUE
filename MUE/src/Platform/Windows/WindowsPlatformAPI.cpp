@@ -20,8 +20,12 @@ namespace MUE
 			return (1000LL * now.QuadPart) / s_frequency.QuadPart;
 		}
 		else {
-			return GetTickCount();
+			return GetTickCount64();
 		}
 	}
-	WindowsPlatformAPI::WindowsPlatformAPI()
+	void* WindowsPlatformAPI::GetProcAddress_Impl(const char* procname)
+	{
+		void* proc = wglGetProcAddress(procname);
+		return proc;
+	}
 }

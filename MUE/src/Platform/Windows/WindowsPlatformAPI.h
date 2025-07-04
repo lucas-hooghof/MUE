@@ -10,8 +10,9 @@ namespace MUE
 		virtual void WriteToConsole_Impl(std::string text) override;
 
 		virtual uint32_t GetTimeMilliseconds_Impl() override;
+		virtual void* GetProcAddress_Impl(const char* procname) override;
 	public:
-		WindowsPlatformAPI();
+		WindowsPlatformAPI() {}
 	private: 
 		DWORD StartTick;
 	};

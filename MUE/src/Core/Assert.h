@@ -2,6 +2,4 @@
 
 #include <Core/Log.h>
 
-#define MUE_ASSERT(check,msg,...) {if(!check){MFATAL_CORE(msg,__VA_ARGS__); MUE_BREAK();}}
-
-#define MUE_ASSERT_NO_MSG(check) {if(!check){MFATAL_CORE("Assert failed at: {0} {1} in {2}",__LINE__,__FUNCTION__,__FILE__); MUE_BREAK();}}
+#define MUE_ASSERT(check) {if(!(check)){MFATAL_CORE("Assert failed:\n\tCheck: {0} at \n\tLine: {1}\n\tFunction: {2} \n\tFile: {3}",#check,__LINE__,__FUNCTION__,__FILE__); MUE_BREAK();}}
