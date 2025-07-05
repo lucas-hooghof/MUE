@@ -15,7 +15,9 @@ project "MUE"
 		"src/**.h",
 		"src/**.cpp",
 	}
-
+    removefiles {
+        "src/MUE/Platform/Windows/**"
+    }
 
 	includedirs
 	{
@@ -34,6 +36,11 @@ project "MUE"
 
 	filter "system:windows"
 		systemversion "latest"
+		
+		files {
+			"src/MUE/Platform/Windows/**.h",
+			"src/MUE/Platform/Windows/**.cpp"
+		}
 
 
 	filter "configurations:Debug"
