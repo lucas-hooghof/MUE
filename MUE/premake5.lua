@@ -14,6 +14,7 @@ project "MUE"
 	{
 		"src/**.h",
 		"src/**.cpp",
+		"src/core/glad.c"
 	}
     removefiles {
         "src/MUE/Platform/Windows/**"
