@@ -1,7 +1,9 @@
 #include <muepch.h>	
 #include <Platform/PlatformAPI.h>
 
+#ifdef MUE_PLATFORM_WINDOWS
 #include <Platform/Windows/WindowsPlatformAPI.h>
+#endif
 
 namespace MUE
 {

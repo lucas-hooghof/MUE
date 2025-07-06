@@ -15,9 +15,13 @@ project "MUE"
 		"src/**.h",
 		"src/**.cpp",
 	}
-    removefiles {
-        "src/MUE/Platform/Windows/**"
-    }
+
+	removefiles 
+	{
+		"src/Platform/Windows/*.cpp",
+		"src/Platform/Windows/*.h"
+	}
+
 
 	includedirs
 	{

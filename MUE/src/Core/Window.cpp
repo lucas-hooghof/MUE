@@ -1,7 +1,9 @@
 #include <muepch.h>
 #include <Core/Window.h>
 
+#ifdef MUE_PLATFORM_WINDOWS
 #include <Platform/Windows/WindowsWindow.h>
+#endif
 
 namespace MUE
 {

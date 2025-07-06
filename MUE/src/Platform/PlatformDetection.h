@@ -9,4 +9,9 @@
 	#else
 		#error "x86 Builds are not supported!"
 	#endif
+#elif defined(__ANDROID__)
+	#define MUE_PLATFORM_ANDROID
+	#error "Android is not supported!"
+#elif defined(__linux__)
+	#define MUE_PLATFORM_LINUX
 #endif

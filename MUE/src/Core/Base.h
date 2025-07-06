@@ -13,7 +13,10 @@
 	#include <Windows.h>
 
 	#define MUE_BREAK() __debugbreak()
+#elif defined(MUE_PLATFORM_LINUX)
+	#define MUE_BREAK() __builtin_trap()
 #else
-	#error "MUE Only supports Windows"
+	#error "MUE Only supports Windows and linux"
 #endif
 
+#include <cstdint>
