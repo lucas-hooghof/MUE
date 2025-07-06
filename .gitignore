@@ -15,3 +15,6 @@ bin-int/*
 
 *.log
 */*.log
+
+Makefile
+*/Makefile
