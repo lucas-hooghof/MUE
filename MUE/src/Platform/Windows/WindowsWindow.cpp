@@ -75,6 +75,27 @@ namespace MUE
 		SetWindowLongPtrA(m_HwndHandle, GWLP_USERDATA, (LONG_PTR)(&m_windowdata));
 
 		ShowWindow(m_HwndHandle, SW_SHOW);
+
+		m_HDC = GetDC(m_HwndHandle);
+
+
+		PIXELFORMATDESCRIPTOR pfd = {};
+		pfd.nSize = sizeof(pfd);
+		pfd.nVersion = 1;
+		pfd.dwFlags = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
+		pfd.iPixelType = PFD_TYPE_RGBA;
+		pfd.cColorBits = 32;
+		pfd.cDepthBits = 24;
+		pfd.cStencilBits = 8;
+		pfd.iLayerType = PFD_MAIN_PLANE;
+
+		int pixelformat = ChoosePixelFormat(m_HDC, &pfd);
+		SetPixelFormat(m_HDC, pixelformat, &pfd);
+
+		m_HGLRC = wglCreateContext(m_HDC);
+		wglMakeCurrent(m_HDC, m_HGLRC);
+
+
 	}
 
 	void WindowsWindow::Shutdown()

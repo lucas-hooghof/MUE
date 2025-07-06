@@ -33,5 +33,8 @@ namespace MUE
 		WindowData m_windowdata;
 		HWND m_HwndHandle;
 		HINSTANCE m_HInstance;
+
+		HDC m_HDC;
+		HGLRC m_HGLRC;
 	};
 }
